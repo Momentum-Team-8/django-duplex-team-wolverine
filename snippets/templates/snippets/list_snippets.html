@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+{% for snippet in snippets %}
+<article>
+  <div class=card>>
+    <h2>
+        <a href={% url 'snippet_detail' pk=snippet.pk %}>{{ snippet.title }}</a>
+    </h2>
+    <h3>{{ snippet.author }}</h3>
+    <p>{{ snippet.language.name }}</p>
+    <p>{{ snippet.description }}</p>
+  </div>
+</article>
+{% endfor %}
+
+
+{% endblock %}
