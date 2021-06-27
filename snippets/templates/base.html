@@ -1,0 +1,29 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        {% block meta %}{% endblock meta %}
+        <title>Code Snippets</title>
+    </head>
+    <body>
+        <header>
+          <div>
+            <h1>Code Snippets</h1>
+            {% if user.is_authenticated %}
+            <p>Hi, {{user.username }}!</p>
+            <a href="{% url 'auth_logout' %}">Logout</a>
+            {% else %}
+            <a href="{% url 'auth_login' %}">Login</a>
+            {% endif %}
+          </div>
+        </header>
+        <main>
+            <div>
+                {% block content %}
+                {% endblock %}
+            </div>
+        </main>
+    </body>
+</html>
