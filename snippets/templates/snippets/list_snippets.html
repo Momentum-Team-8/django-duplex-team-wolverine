@@ -6,11 +6,12 @@
 <article>
   <div class=card>>
     <h2>
-        <a href={% url 'snippet_detail' pk=snippet.pk %}>{{ snippet.title }}</a>
+        {{ snippet.title }}
     </h2>
     <h3>{{ snippet.author }}</h3>
+    <p>{{ snippet.code }}</p>
     <p>{{ snippet.language.name }}</p>
-    <p>{{ snippet.description }}</p>
+    <p>Description: {{ snippet.description }}</p>
   </div>
 </article>
 {% endfor %}
