@@ -9,8 +9,9 @@
         <a href={% url 'snippet_details' pk=snippet.pk %}>{{ snippet.title }}</a>
     </h2>
     <h3>{{ snippet.author }}</h3>
+    <p>{{ snippet.code }}</p>
     <p>{{ snippet.language.name }}</p>
-    <p>{{ snippet.description }}</p>
+    <p>Description: {{ snippet.description }}</p>
   </div>
 </article>
 {% endfor %}
