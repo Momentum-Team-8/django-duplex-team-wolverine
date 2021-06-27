@@ -16,3 +16,7 @@ def homepage(request):
 def list_snippets(request):
     snippets = Snippet.objects.all().order_by("created_date")
     return render(request, "snippets/list_snippets.html", {"snippets": snippets})
+
+def snippet_details(request, pk):
+    snippet = get_object_or_404(Snippet, pk=pk)
+    return render(request, "snippets/snippet_details.html", {"snippet": snippet})
