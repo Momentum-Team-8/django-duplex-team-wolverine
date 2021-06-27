@@ -4,9 +4,12 @@
 
 {% for snippet in snippets %}
 <article>
-  <div class=card>>
+  <div class=card>
     <h2>
-        {{ snippet.title }}
+<<<<<<< HEAD
+=======
+        <a href={% url 'snippet_details' pk=snippet.pk %}>{{ snippet.title }}</a>
+>>>>>>> snippet_details
     </h2>
     <h3>{{ snippet.author }}</h3>
     <p>{{ snippet.code }}</p>

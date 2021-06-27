@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h2>Snippet Detail</h2>
+
+<a href={% url 'list_snippets' %}>Back to all snippets</a>
+
+<div class=card>
+    <h2>
+        {{ snippet.title }}
+    </h2>
+    <h3>{{ snippet.author }}</h3>
+    <p class="code">{{ snippet.code }}</p>
+    <p>{{ snippet.language.name }}</p>
+    <p>{{ snippet.description }}</p>
+</div>
+
+
+{% endblock content %}
