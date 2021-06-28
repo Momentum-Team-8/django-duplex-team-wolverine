@@ -64,3 +64,8 @@ def delete_snippet(request, pk):
 
     return render(request, "snippets/delete_snippet.html", {"snippet": snippet})
 
+def search_by_title(request):
+    query = request.GET.get("q")
+    results = Snippet.objects.filter(title__icontains=query)
+
+    return render(request, "snippets/list_snippets.html", {"snippets": results})
