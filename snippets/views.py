@@ -1,6 +1,6 @@
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, redirect, get_object_or_404
-from .models import Snippet, Tags
+from .models import Snippet, Tags, User
 from django.utils import timezone
 from .forms import SnippetForm
 from django.contrib import messages
@@ -14,14 +14,13 @@ def homepage(request):
     else:
         return render(request, "snippets/home.html")
 
-@login_required
 def list_snippets(request):
     snippets = Snippet.objects.all().order_by("created_date")
     return render(request, "snippets/list_snippets.html", {"snippets": snippets})
 
 def snippet_details(request, pk):
     snippet = get_object_or_404(Snippet, pk=pk)
-       add_snippet
+    add_snippet
     return render(request, "snippets/snippet_details.html", {"snippet": snippet})
 
 def add_snippet(request):
@@ -37,6 +36,12 @@ def add_snippet(request):
     return render(request, "snippets/add_snippet.html", {"form": form})
 
 @login_required
+def my_snippets(request):
+    user = request.user
+    snippets = Snippet.objects.filter(author=user)
+    return render(request, "snippets/my_snippets.html", {"snippets": snippets})
+
+@login_required()
 def edit_snippet(request, pk):
     snippet = get_object_or_404(Snippet, pk=pk)
     if request.method == "GET":
@@ -46,7 +51,6 @@ def edit_snippet(request, pk):
         if form.is_valid():
             form.save()
             return redirect("list_snippets")
-
     return render(request, "snippets/edit_snippet.html", {"form": form, "snippet": snippet})
 
 @login_required
