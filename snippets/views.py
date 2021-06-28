@@ -1,6 +1,6 @@
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, redirect, get_object_or_404
-from .models import Snippet, Tags
+from .models import Snippet, Tags, User
 from django.utils import timezone
 from .forms import SnippetForm
 
@@ -20,7 +20,7 @@ def list_snippets(request):
 
 def snippet_details(request, pk):
     snippet = get_object_or_404(Snippet, pk=pk)
-       add_snippet
+    add_snippet
     return render(request, "snippets/snippet_details.html", {"snippet": snippet})
 
 def add_snippet(request):
@@ -34,3 +34,9 @@ def add_snippet(request):
         form = SnippetForm()
 
     return render(request, "snippets/add_snippet.html", {"form": form})
+
+@login_required
+def my_snippets(request):
+    user = request.user
+    snippets = Snippet.objects.filter(author=user)
+    return render(request, "snippets/my_snippets.html", {"snippets": snippets})
