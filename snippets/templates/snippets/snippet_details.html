@@ -13,6 +13,7 @@
     <p class="code">{{ snippet.code }}</p>
     <p>{{ snippet.language }}</p>
     <p>{{ snippet.description }}</p>
+    <a href={% url 'edit_snippet' pk=snippet.pk%}>Edit ✍️</a>
 </div>
 
 
