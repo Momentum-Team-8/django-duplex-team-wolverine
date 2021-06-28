@@ -14,6 +14,7 @@
     <p>{{ snippet.language }}</p>
     <p>{{ snippet.description }}</p>
     <a href={% url 'edit_snippet' pk=snippet.pk%}>Edit ✍️</a>
+    <a href={% url 'delete_snippet' pk=snippet.pk%}>Delete ❌</a>
 </div>
 
 

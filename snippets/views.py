@@ -3,6 +3,7 @@ from django.shortcuts import render, redirect, get_object_or_404
 from .models import Snippet, Tags
 from django.utils import timezone
 from .forms import SnippetForm
+from django.contrib import messages
 
 # Create your views here.
 
@@ -34,7 +35,7 @@ def add_snippet(request):
 
     return render(request, "snippets/add_snippet.html", {"form": form})
 
-
+@login_required
 def edit_snippet(request, pk):
     snippet = get_object_or_404(Snippet, pk=pk)
     if request.method == "GET":
@@ -46,3 +47,14 @@ def edit_snippet(request, pk):
             return redirect("list_snippets")
 
     return render(request, "snippets/edit_snippet.html", {"form": form, "snippet": snippet})
+
+@login_required
+def delete_snippet(request, pk):
+    snippet = get_object_or_404(Snippet, pk=pk)
+
+    if request.method == "POST":
+        snippet.delete()
+        messages.success(request, "Snippet deleted.")
+        return redirect("list_snippets")
+
+    return render(request, "snippets/delete_snippet.html", {"snippet": snippet})
