@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>Edit Snippet</h1>
+
+<div>
+    <form action="{% url 'edit_snippet' pk=snippet.pk %}" method="POST">
+    {% csrf_token %}
+    {% for field in form %}
+    <div class="measure">
+        <label for="{{field.id_for_label}}" class="">{{ field.label}}</label>
+        {{ field }}
+    </div>
+    {% endfor %}
+    <div class="submit">
+        <button type="submit" class="">Save</button>
+    </div>
+    </form>
+</div>
+</div>
+{% endblock content%}
