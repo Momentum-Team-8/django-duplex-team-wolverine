@@ -21,6 +21,7 @@ def list_snippets(request):
 
 def snippet_details(request, pk):
     snippet = get_object_or_404(Snippet, pk=pk)
+       add_snippet
     return render(request, "snippets/snippet_details.html", {"snippet": snippet})
 
 def add_snippet(request):
@@ -58,3 +59,4 @@ def delete_snippet(request, pk):
         return redirect("list_snippets")
 
     return render(request, "snippets/delete_snippet.html", {"snippet": snippet})
+
