@@ -16,10 +16,9 @@
   </div>
 </article>
 
-<section class="">
-    <a href={% url 'edit_snippet' %} class="">Edit</a>
-    <a href={% url 'delete_snippet' %} class="">Delete</a>
-</section>
+<a href={% url 'edit_snippet' pk=snippet.pk%}>Edit ✍️</a>
+<a href={% url 'delete_snippet' pk=snippet.pk%}>Delete ❌</a>
+
 {% endfor %}
 
 <section class="">
