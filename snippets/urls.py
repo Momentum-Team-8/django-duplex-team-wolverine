@@ -7,4 +7,5 @@ urlpatterns = [
     path("list/", views.list_snippets, name='list_snippets'),
     path('accounts/', include('registration.backends.simple.urls')),
     path("snippets/<int:pk>", views.snippet_details, name="snippet_details"),
+    path("snippets/new", views.add_snippet, name="add_snippet"),
 ]

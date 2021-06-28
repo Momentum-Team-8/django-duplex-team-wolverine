@@ -10,11 +10,15 @@
     </h2>
     <h3>{{ snippet.author }}</h3>
     <p>{{ snippet.code }}</p>
-    <p>{{ snippet.language.name }}</p>
+    <p>{{ snippet.language }}</p>
     <p>Description: {{ snippet.description }}</p>
   </div>
 </article>
 {% endfor %}
+
+<section class="">
+    <a href={% url 'add_snippet' %} class="">Add a new code snippet ➡️</a>
+</section>
 
 
 {% endblock %}
