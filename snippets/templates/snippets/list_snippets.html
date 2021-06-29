@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 
 {% block content %}
-<section class="">
+<section class="search">
     <form action="{% url 'search_snippet' %}" method="GET">
         <input type="text" name="q">
         <button type="submit" class="">Search by title</button>
