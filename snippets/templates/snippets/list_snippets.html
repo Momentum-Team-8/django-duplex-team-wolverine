@@ -7,12 +7,15 @@
 
 {% endblock %}
 {% block content %}
-<section class="">
+<section class="search">
     <form action="{% url 'search_snippet' %}" method="GET">
-        <input type="text" name="q">
+        <input class="search-box" type="text" name="q">
         <button type="submit" class="">Search by title</button>
       </form>
   </section>
+<section class="add-snippet">
+    <a href={% url 'add_snippet' %} class="">+ Add a new code snippet</a>
+</section>
 {% for snippet in snippets %}
 <article>
   <div class=card>
@@ -29,10 +32,6 @@
 {% empty %}
     <h2>Sorry, no results came back.</h2>
 {% endfor %}
-
-<section class="">
-    <a href={% url 'add_snippet' %} class="">Add a new code snippet ➡️</a>
-</section>
 
 
 {% endblock %}
