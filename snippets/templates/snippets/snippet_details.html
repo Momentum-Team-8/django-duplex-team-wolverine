@@ -1,4 +1,9 @@
 {% extends "base.html" %}
+{% load static %}
+{% block javascript %}
+<script src={% static 'main.js' %} defer></script>
+<script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.8/dist/clipboard.min.js"></script>
+{% endblock %}
 
 {% block content %}
 <h2>Snippet Detail</h2>
@@ -10,9 +15,10 @@
         {{ snippet.title }}
     </h2>
     <h3>{{ snippet.author }}</h3>
-    <p class="code">{{ snippet.code }}</p>
+    <p id="code">{{ snippet.code }}</p>
     <p>{{ snippet.language.name }}</p>
     <p>{{ snippet.description }}</p>
+    <button class="btn" data-clipboard-action="copy" data-clipboard-target="#code">Copy Code</button>
 </div>
 
 
