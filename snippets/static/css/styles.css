@@ -1,0 +1,40 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Helvetica, sans-serif;
+    padding-left: 20px;
+    line-height: 30px;
+}
+
+a {
+    text-decoration: none;
+}
+
+h1 > a{
+    color: white;
+}
+
+header > div {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: cent;
+}
+
+h1 {
+    background-color: #147e9e;
+    width: fit-content;
+    padding: 10px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border-radius: 9px;
+}
+
+.card {
+    margin-top: 40px;
+    width: 60vh;
+}
