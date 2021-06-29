@@ -1,7 +1,11 @@
 {% extends "base.html" %}
 
 {% block content %}
-<h1>My Snippets</h1>
+<h1 class="heading-text">My Snippets</h1>
+
+<section class="add-snippet">
+    <a href={% url 'add_snippet' %} class="">+ Add a new code snippet</a>
+</section>
 
 {% for snippet in snippets %}
 <article>
@@ -20,9 +24,5 @@
 <a href={% url 'delete_snippet' pk=snippet.pk%}>Delete ❌</a>
 
 {% endfor %}
-
-<section class="">
-    <a href={% url 'add_snippet' %} class="">Add a new code snippet ➡️</a>
-</section>
 
 {% endblock content %}

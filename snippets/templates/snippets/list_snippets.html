@@ -9,12 +9,12 @@
 {% block content %}
 <section class="search">
     <form action="{% url 'search_snippet' %}" method="GET">
-        <input type="text" name="q">
+        <input class="search-box" type="text" name="q">
         <button type="submit" class="">Search by title</button>
       </form>
   </section>
 <section class="add-snippet">
-    <a href={% url 'add_snippet' %} class="">Add a new code snippet ➡️</a>
+    <a href={% url 'add_snippet' %} class="">+ Add a new code snippet</a>
 </section>
 {% for snippet in snippets %}
 <article>
