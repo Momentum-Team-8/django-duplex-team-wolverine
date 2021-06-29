@@ -119,3 +119,9 @@ button {
 .heading-text {
     margin-top: 50px;
 }
+
+.measure {
+    margin-top: 40px;
+    display: flex;
+    justify-content: left;
+}
