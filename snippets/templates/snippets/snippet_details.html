@@ -8,20 +8,24 @@
 {% block content %}
 <h2 class="heading-text">Snippet Detail</h2>
 
-<a href={% url 'list_snippets' %}>Back to all snippets</a>
+<a href={% url 'list_snippets' %} class="back">⬅ Back to all snippets</a>
 
 <div class=card>
-    <h2>
+    <h2 class="snippet-title">
         {{ snippet.title }}
     </h2>
     <h3>{{ snippet.author }}</h3>
-    <p>{{ snippet.language }}</p>
+    <p class="lan">{{ snippet.language }}</p>
     <pre><code class="language-{{ snippet.language }}" id="code">{{ snippet.code }}</code></pre>
     <p>{{ snippet.language.name }}</p>
-    <p>{{ snippet.description }}</p>
+    <p class="description">{{ snippet.description }}</p>
     <button class="btn" data-clipboard-action="copy" data-clipboard-target="#code">Copy Code</button>
-    <a href={% url 'edit_snippet' pk=snippet.pk%}>Edit ✍️</a>
-    <a href={% url 'delete_snippet' pk=snippet.pk%}>Delete ❌</a>
+    {% if user == snippet.author %}
+        <a href={% url 'edit_snippet' pk=snippet.pk%} class="edit">Edit ✍️</a>
+        <a href={% url 'delete_snippet' pk=snippet.pk%} class="delete">Delete</a>
+    {% else %}
+        <p></p>
+    {% endif %}
 </div>
 
 
