@@ -184,7 +184,22 @@ button:hover {
     margin-top: 40px;
     display: flex;
     justify-content: left;
+    background-color: rgb(216, 216, 216);
+    width: fit-content;
+    height: fit-content;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
 }
+
+.measure > label {
+    margin-right: 20px;
+    color: black;
+    width: fit-content;
+    height: fit-content;
+    font-weight: bold;
+}
+
 .edit {
     text-decoration: none;
     color: white;
@@ -212,4 +227,8 @@ button:hover {
 
 .delete:hover {
     background-color: #ff0000;
+}
+
+.submit {
+    margin-bottom: 50px;
 }
