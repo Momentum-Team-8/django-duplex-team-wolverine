@@ -15,7 +15,8 @@
         {{ snippet.title }}
     </h2>
     <h3>{{ snippet.author }}</h3>
-    <p id="code">{{ snippet.code }}</p>
+    <pre><code class="language-{{ snippet.language }}" id="code">{{ snippet.code }}</code></pre>
+    <p>{{ snippet.language }}</p>
     <p>{{ snippet.language.name }}</p>
     <p>{{ snippet.description }}</p>
     <button class="btn" data-clipboard-action="copy" data-clipboard-target="#code">Copy Code</button>
