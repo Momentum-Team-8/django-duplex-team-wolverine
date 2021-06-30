@@ -24,10 +24,12 @@ def snippet_details(request, pk):
     return render(request, "snippets/snippet_details.html", {"snippet": snippet})
 
 def add_snippet(request):
+    user = request.user.username
     if request.method == "POST":
         form = SnippetForm(data=request.POST)
         if form.is_valid():
             snippet = form.save(commit=False)
+            snippet.author = request.user
             snippet.save()
             return redirect("snippet_details", pk=snippet.pk)
     else:
