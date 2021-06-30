@@ -26,7 +26,7 @@
     <p id="code">{{ snippet.code }}</p>
     <p>{{ snippet.language }}</p>
     <p>Description: {{ snippet.description }}</p>
-    <button class="btn" data-clipboard-action="copy" data-clipboard-target="#code">Copy Code</button>
+    <button class="btn" data-clipboard-action="copy" data-clipboard-text="{{ snippet.code }}">Copy Code</button>
   </div>
 </article>
 {% empty %}
