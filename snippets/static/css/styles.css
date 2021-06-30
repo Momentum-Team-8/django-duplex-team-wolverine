@@ -62,6 +62,10 @@ h1 > a:hover {
     width: 70vh;
 }
 
+.description {
+    margin-bottom: 50px;
+}
+
 h2 > a {
     color: black;
     background-color: rgb(255, 183, 49);
@@ -71,6 +75,14 @@ h2 > a {
 
 h2 > a:hover {
     background-color: rgb(241, 173, 47);
+}
+
+.snippet-title {
+    color: black;
+    background-color: rgb(255, 183, 49);
+    padding: 10px;
+    border-radius: 10px;
+    width: fit-content;
 }
 
 h2 {
@@ -83,6 +95,13 @@ button {
     color: white;
     padding: 5px;
     border-radius: 5px;
+    font-size: medium;
+    margin-right: 200px;
+}
+
+button:hover {
+    background-color: #106781;
+    cursor:pointer;
 }
 
 .search {
@@ -121,10 +140,48 @@ button {
 
 .heading-text {
     margin-top: 50px;
+    font-size: xx-large;
+}
+
+.back {
+    margin-top: 20px;
+    margin-bottom: 90px;
+    color: black;
+    width: fit-content;
+    padding: 5px;
+    border-radius: 5px;
+    background-color: rgb(216, 216, 216);
+}
+
+.back:hover {
+    background-color: rgb(207, 207, 207);
 }
 
 .measure {
     margin-top: 40px;
     display: flex;
     justify-content: left;
+}
+.edit {
+    text-decoration: none;
+    color: white;
+    padding: 5px;
+    background-color: #147e9e;
+    border-radius: 5px;
+}
+
+.edit:hover {
+    background-color: #106781;
+}
+
+.delete {
+    text-decoration: none;
+    color: white;
+    padding: 5px;
+    background-color: #fc5757;
+    border-radius: 5px;
+}
+
+.delete:hover {
+    background-color: #ff0000;
 }

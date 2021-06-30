@@ -16,12 +16,12 @@
     <h3>{{ snippet.author }}</h3>
     <p>{{ snippet.code }}</p>
     <p>{{ snippet.language }}</p>
-    <p>Description: {{ snippet.description }}</p>
+    <p class="description">Description: {{ snippet.description }}</p>
   </div>
 </article>
 
-<a href={% url 'edit_snippet' pk=snippet.pk%}>Edit ✍️</a>
-<a href={% url 'delete_snippet' pk=snippet.pk%}>Delete ❌</a>
+<a href={% url 'edit_snippet' pk=snippet.pk%} class="edit">Edit ✍️</a>
+<a href={% url 'delete_snippet' pk=snippet.pk%} class="delete">Delete</a>
 
 {% endfor %}
 
