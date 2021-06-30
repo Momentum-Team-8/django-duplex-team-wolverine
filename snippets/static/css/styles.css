@@ -63,23 +63,26 @@ h1 > a:hover {
     background-color: rgb(228, 228, 228);
     padding: 25px;
     border-radius: 20px;
+    margin-bottom: 50px;
 }
 
-.language {
+pre {
     margin-top: 10px;
+    margin-bottom: 10px;
     width: fit-content;
     height: fit-content;
-    padding: 5px;
-    color: white;
-    border-radius: 5px;
-    background-color: rgb(100, 100, 100);
 }
 
-#code {
-    background-color: white;
-    padding: 10px;
-    border-radius: 10px;
+.lan {
+    background-color: #FDFDFD;
+    color: black;
+    width: fit-content;
+    padding: 5px;
+    border-radius: 5px;
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
+
 .description {
     margin-bottom: 50px;
 }
