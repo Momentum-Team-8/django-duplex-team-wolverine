@@ -23,8 +23,10 @@
         <a href={% url 'snippet_details' pk=snippet.pk %}>{{ snippet.title }}</a>
     </h2>
     <h3>{{ snippet.author }}</h3>
-    <p id="code">{{ snippet.code }}</p>
-    <p class="language">{{ snippet.language }}</p>
+
+    <p>{{ snippet.language }}</p>
+    <pre><code class="language"{{ snippet.language }}" id="code">{{ snippet.code }}</code></pre>
+
     <p>Description: {{ snippet.description }}</p>
     <button class="btn" data-clipboard-action="copy" data-clipboard-text="{{ snippet.code }}">Copy Code</button>
   </div>
