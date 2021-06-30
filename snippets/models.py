@@ -16,11 +16,30 @@ class User(AbstractUser):
 class Snippet(models.Model):
     title = models.CharField(max_length=100)
     code = models.TextField()
-    language = models.CharField(max_length=100)
     author = models.ForeignKey("User", on_delete=models.CASCADE, related_name="snippets")
     description = models.TextField()
     tags = models.ManyToManyField("Tags", related_name="snippets")
-    created_date = models.DateTimeField(default=timezone.now) 
+    created_date = models.DateTimeField(default=timezone.now)
+    LANGUAGE_CHOICES = [
+        ('html', 'HTML'),
+        ('css', 'CSS'),
+        ('javascript', 'JavaScript'),
+        ('bash', 'Bash'),
+        ('cpp', 'C++'),
+        ('django', 'Django'),
+        ('git', 'Git'),
+        ('http', 'HTTP'),
+        ('gitignore', '.ignore'),
+        ('json', 'JSON'),
+        ('php', 'PHP'),
+        ('python', 'Python'),
+        ('jsx', 'React JSX'),
+        ('regex', 'Regex'),
+        ('rest', 'reST'),
+        ('ruby', 'Ruby'),
+        ('sql', 'SQL'),
+    ]
+    language = models.CharField(choices=LANGUAGE_CHOICES, max_length=25)
 
     def __str__(self):
         return self.title
