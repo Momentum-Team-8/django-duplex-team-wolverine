@@ -17,13 +17,13 @@
     <p class="lan">{{ snippet.language }}</p>
 
     <pre><code class="language-{{ snippet.language }}" id="code">{{ snippet.code }}</code></pre>
-    <p>Description: {{ snippet.description }}</p>
-
+    <p  class="description">{{ snippet.description }}</p>
+    <a href={% url 'edit_snippet' pk=snippet.pk%} class="edit">Edit ✍️</a>
+    <a href={% url 'delete_snippet' pk=snippet.pk%} class="delete">Delete</a>
   </div>
 </article>
 
-<a href={% url 'edit_snippet' pk=snippet.pk%} class="edit">Edit ✍️</a>
-<a href={% url 'delete_snippet' pk=snippet.pk%} class="delete">Delete</a>
+
 
 {% endfor %}
 
