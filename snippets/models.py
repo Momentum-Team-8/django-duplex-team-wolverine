@@ -45,7 +45,7 @@ class Snippet(models.Model):
         return self.title
 
 class Tags(models.Model):
-    name = models.CharField(max_length=255)
+    name = models.CharField(max_length=255, blank=True, null=True)
     slug = models.SlugField(max_length=75)
 
     def __str__(self):
