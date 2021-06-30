@@ -14,8 +14,8 @@
         <a href={% url 'snippet_details' pk=snippet.pk %}>{{ snippet.title }}</a>
     </h2>
     <h3>{{ snippet.author }}</h3>
-    <p>{{ snippet.code }}</p>
     <p>{{ snippet.language }}</p>
+    <pre><code class="language-{{ snippet.language }}" id="code">{{ snippet.code }}</code></pre>
     <p>Description: {{ snippet.description }}</p>
   </div>
 </article>
