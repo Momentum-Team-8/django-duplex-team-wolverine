@@ -19,6 +19,8 @@
     <p>{{ snippet.language.name }}</p>
     <p>{{ snippet.description }}</p>
     <button class="btn" data-clipboard-action="copy" data-clipboard-target="#code">Copy Code</button>
+    <a href={% url 'edit_snippet' pk=snippet.pk%}>Edit ✍️</a>
+    <a href={% url 'delete_snippet' pk=snippet.pk%}>Delete ❌</a>
 </div>
 
 
