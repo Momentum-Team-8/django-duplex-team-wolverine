@@ -59,7 +59,7 @@ h1 > a:hover {
 
 .card {
     margin-top: 60px;
-    width: 70vh;
+    width: fit-content;
     background-color: rgb(228, 228, 228);
     padding: 25px;
     border-radius: 20px;
@@ -85,6 +85,8 @@ pre {
 
 .description {
     margin-bottom: 50px;
+    width: 400px;
+    word-wrap: normal;
 }
 
 h2 > a {
@@ -117,7 +119,7 @@ button {
     padding: 5px;
     border-radius: 5px;
     font-size: medium;
-    margin-right: 200px;
+    /* margin-right: 200px; */
 }
 
 button:hover {
@@ -196,11 +198,16 @@ button:hover {
 }
 
 .delete {
+    margin-top: 40px;
     text-decoration: none;
     color: white;
     padding: 5px;
     background-color: #fc5757;
     border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: larger;
 }
 
 .delete:hover {
