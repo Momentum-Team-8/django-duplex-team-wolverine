@@ -6,7 +6,7 @@
 
 body {
     font-family: Helvetica, sans-serif;
-    padding-left: 20px;
+    padding-left: 40px;
     line-height: 30px;
 }
 
@@ -231,4 +231,18 @@ button:hover {
 
 .submit {
     margin-bottom: 50px;
+}
+
+.form-submit {
+    font-size: x-large;
+}
+
+#id_tags {
+    height: 200px;
+}
+
+.instructions {
+    margin-top: 0;
+    margin-bottom: 50px;
+    line-height: 20px;
 }
