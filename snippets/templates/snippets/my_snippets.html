@@ -18,6 +18,7 @@
 
     <pre><code class="language-{{ snippet.language }}" id="code">{{ snippet.code }}</code></pre>
     <p  class="description">{{ snippet.description }}</p>
+    <p>Copied {{ snippet.copy_count }} times</p>
     <a href={% url 'edit_snippet' pk=snippet.pk%} class="edit">Edit ✍️</a>
     <a href={% url 'delete_snippet' pk=snippet.pk%} class="delete">Delete</a>
   </div>

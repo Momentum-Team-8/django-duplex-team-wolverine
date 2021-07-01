@@ -19,7 +19,8 @@
     <pre><code class="language-{{ snippet.language }}" id="code">{{ snippet.code }}</code></pre>
     <p>{{ snippet.language.name }}</p>
     <p class="description">{{ snippet.description }}</p>
-    <button class="btn" data-clipboard-action="copy" data-clipboard-target="#code">Copy Code</button>
+    <p>Copied {{ snippet.copy_count }} times</p>
+    <a href={% url 'copy_snippet' pk=snippet.pk %}><button class="btn" data-clipboard-action="copy" data-clipboard-text="{{ snippet.code }}">Copy Code</button></a>
     {% if user == snippet.author %}
         <a href={% url 'edit_snippet' pk=snippet.pk%} class="edit">Edit ✍️</a>
         <a href={% url 'delete_snippet' pk=snippet.pk%} class="delete">Delete</a>
