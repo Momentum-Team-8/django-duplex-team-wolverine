@@ -31,7 +31,7 @@ def add_snippet(request):
             snippet = form.save(commit=False)
             snippet.author = request.user
             snippet.save()
-            return redirect("snippet_details", pk=snippet.pk)
+        return redirect("snippet_details", pk=snippet.pk)
     else:
         form = SnippetForm()
 
