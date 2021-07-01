@@ -71,3 +71,7 @@ def search_by_title(request):
     results = Snippet.objects.filter(title__icontains=query)
 
     return render(request, "snippets/list_snippets.html", {"snippets": results})
+
+def copy_snippet(request, pk):
+    user = request.user
+    snippet = get_object_or_404(klass=Snippet)
