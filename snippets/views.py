@@ -66,6 +66,13 @@ def delete_snippet(request, pk):
 
     return render(request, "snippets/delete_snippet.html", {"snippet": snippet})
 
+def copy_snippet(request, pk):
+    snippet = get_object_or_404(Snippet, pk=pk)
+    if request.method == "GET":
+        form = CopyForm(data=request.POST, instance=snippet)
+        form.save()
+    return render(request, "snippets/copy_snippet.html", {"form", form})
+
 def search_by_title(request):
     query = request.GET.get("q")
     results = Snippet.objects.filter(title__icontains=query)
