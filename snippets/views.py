@@ -29,6 +29,7 @@ def add_snippet(request):
         if form.is_valid():
             snippet = form.save(commit=False)
             snippet.author = request.user
+            snippet.copy_count = 0
             snippet.save()
         return redirect("snippet_details", pk=snippet.pk)
     else:
@@ -54,6 +55,25 @@ def edit_snippet(request, pk):
             return redirect("list_snippets")
     return render(request, "snippets/edit_snippet.html", {"form": form, "snippet": snippet})
 
+
+def copy_snippet(request, pk):
+    original = get_object_or_404(Snippet, pk=pk)
+    user = request.user.username
+    count = original.copy_count
+    if request.method == "POST":
+        form = SnippetForm(data=request.POST)
+        if form.is_valid():
+            snippet = form.save(commit=False)
+            snippet.author = request.user
+            snippet.copy_count = int(count)
+            snippet.copy_count += 1
+            snippet.save()
+            return redirect("snippet_details", pk=snippet.pk)
+    else:
+        form = SnippetForm()
+
+    return render(request, "snippets/copy_snippet.html", {"form": form})
+
 @login_required
 def delete_snippet(request, pk):
     snippet = get_object_or_404(Snippet, pk=pk)
@@ -64,6 +84,7 @@ def delete_snippet(request, pk):
         return redirect("list_snippets")
 
     return render(request, "snippets/delete_snippet.html", {"snippet": snippet})
+
 
 def search_by_title(request):
     query = request.GET.get("q")

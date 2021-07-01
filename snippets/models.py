@@ -40,6 +40,7 @@ class Snippet(models.Model):
         ('sql', 'SQL'),
     ]
     language = models.CharField(choices=LANGUAGE_CHOICES, max_length=25)
+    copy_count = models.IntegerField()
 
     def __str__(self):
         return self.title
