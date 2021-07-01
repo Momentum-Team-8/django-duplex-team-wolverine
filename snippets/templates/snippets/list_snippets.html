@@ -27,6 +27,7 @@
     <pre><code class="language-{{ snippet.language }}" id="code">{{ snippet.code }}</code></pre>
 
     <p class="description">{{ snippet.description }}</p>
+    <p>Copied {{ snippet.copy_count }} times</p>
     <a href={% url 'copy_snippet' pk=snippet.pk %}><button class="btn" data-clipboard-action="copy" data-clipboard-text="{{ snippet.code }}">Copy Code</button></a>
   </div>
 </article>
